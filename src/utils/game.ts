@@ -40,7 +40,7 @@ export function createStar(canvasWidth: number, elapsedMs: number, nextId: numbe
   if (isGold) points *= 3
 
   const speedBonus = Math.min(elapsedMs / 12000, 3)
-  const speed = 2.6 + Math.random() * 1.8 + speedBonus
+  const speed = 4.2 + Math.random() * 2.2 + speedBonus
 
   return {
     id: nextId,
