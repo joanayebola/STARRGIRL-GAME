@@ -21,6 +21,44 @@
   animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* ── Ayra congrats ────────────────────────────────────── */
+.ayra-congrats {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.85rem;
+  animation: ayra-entrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+@keyframes ayra-entrance {
+  from { opacity: 0; transform: translateY(24px) scale(0.85); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ayra-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--magenta);
+  box-shadow: 0 0 18px var(--magenta-glow);
+  flex-shrink: 0;
+}
+
+.ayra-bubble {
+  position: relative;
+  background: rgba(28, 12, 52, 0.9);
+  border: 1px solid rgba(212, 0, 90, 0.3);
+  border-radius: 16px 16px 16px 4px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.4;
+  max-width: 220px;
+  box-shadow: 0 0 20px rgba(212, 0, 90, 0.15);
+}
+
 /* ── Score ────────────────────────────────────────────── */
 .end-score-label {
   font-size: 0.65rem;

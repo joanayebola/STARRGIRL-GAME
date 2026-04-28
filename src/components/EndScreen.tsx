@@ -15,6 +15,13 @@ interface Props {
 
 type Phase = 'entry' | 'submitting' | 'done'
 
+function getAyraMessage(score: number): string {
+  if (score >= 800) return "THAT'S MY STARR GIRL!! 🌟🔥"
+  if (score >= 500) return "okay you're giving STARR GIRL energy ✨"
+  if (score >= 250) return "not bad! keep catching those stars ⭐"
+  return "aww, try again! you've got this 💜"
+}
+
 export default function EndScreen({ score, onPlayAgain }: Props) {
   const [name,      setName]      = useState('')
   const [phase,     setPhase]     = useState<Phase>('entry')
@@ -61,6 +68,13 @@ export default function EndScreen({ score, onPlayAgain }: Props) {
   return (
     <div className="end-screen">
       <div className="end-card">
+
+        {/* Ayra congrats */}
+        <div className="ayra-congrats">
+          <img src="/ayra%20starr.jpeg" alt="Ayra Starr" className="ayra-img" />
+          <div className="ayra-bubble">{getAyraMessage(score)}</div>
+        </div>
+
         <div className="end-score-label">Your Score</div>
         <div className="end-score">{score.toLocaleString()}</div>
 
