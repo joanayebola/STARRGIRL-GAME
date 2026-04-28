@@ -1,0 +1,179 @@
+.end-screen {
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.25rem 4rem;
+  overflow-y: auto;
+  /* Subtle top spotlight */
+  background:
+    radial-gradient(ellipse 60% 35% at 50% 0%, rgba(212, 0, 90, 0.15) 0%, transparent 100%),
+    var(--space);
+}
+
+.end-card {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Score ────────────────────────────────────────────── */
+.end-score-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.end-score {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(4.5rem, 20vw, 8rem);
+  line-height: 0.9;
+  background: linear-gradient(160deg, var(--cream) 20%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 24px var(--gold-glow));
+  animation: score-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+@keyframes score-pop {
+  from { opacity: 0; transform: scale(0.45) rotate(-4deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ── Rank badge ───────────────────────────────────────── */
+.end-rank {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-shadow: 0 0 16px var(--gold-glow);
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.end-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.end-name-label {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-align: center;
+}
+
+.end-name-input {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background: rgba(28, 12, 52, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--cream);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.end-name-input::placeholder {
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.end-name-input:focus {
+  border-color: rgba(212, 0, 90, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 0, 90, 0.12);
+}
+
+.end-error {
+  font-size: 0.78rem;
+  color: #f87171;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.end-submit-btn {
+  padding: 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--magenta);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 30px var(--magenta-glow);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, opacity 0.15s;
+}
+
+.end-submit-btn:hover:not(:disabled) {
+  background: var(--magenta-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 0 45px rgba(255, 26, 124, 0.5);
+}
+
+.end-submit-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* ── Leaderboard panel ────────────────────────────────── */
+.end-board-wrap {
+  width: 100%;
+  background: rgba(28, 12, 52, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem;
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.end-board-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Play again ───────────────────────────────────────── */
+.end-again-btn {
+  padding: 0.7rem 2.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s;
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+}
+
+.end-again-btn:hover {
+  border-color: rgba(196, 181, 253, 0.35);
+  color: var(--violet-light);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
